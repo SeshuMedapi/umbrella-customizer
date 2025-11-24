@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes umbrella-zoom-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(0.3);
+    opacity: 0;
+    filter: blur(3px);
+  }
+}
+
+@keyframes umbrella-zoom-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+    filter: blur(3px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes umbrella-slide-out-left {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    transform: translateX(-120%) scale(0.8);
+    opacity: 0;
+    filter: blur(2px);
+  }
+}
+
+@keyframes umbrella-slide-in-right {
+  0% {
+    transform: translateX(120%) scale(0.8);
+    opacity: 0;
+    filter: blur(2px);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes umbrella-slide-out-right {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    transform: translateX(120%) scale(0.8);
+    opacity: 0;
+    filter: blur(2px);
+  }
+}
+
+@keyframes umbrella-slide-in-left {
+  0% {
+    transform: translateX(-120%) scale(0.8);
+    opacity: 0;
+    filter: blur(2px);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.umbrella-zoom-animation {
+  animation: umbrella-zoom-out 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+             umbrella-zoom-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+  transform-origin: center center;
+}
+
+.umbrella-slide-left {
+  animation: umbrella-slide-out-left 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+             umbrella-slide-in-right 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+  transform-origin: center center;
+}
+
+.umbrella-slide-right {
+  animation: umbrella-slide-out-right 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+             umbrella-slide-in-left 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+  transform-origin: center center;
+}
